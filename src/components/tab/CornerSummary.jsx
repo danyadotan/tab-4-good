@@ -30,7 +30,7 @@ export default function CornerSummary() {
   };
 
   return (
-    <div ref={ref} className="fixed bottom-3 right-3 sm:bottom-5 sm:right-5 z-40">
+    <div ref={ref} className="fixed bottom-24 right-3 md:bottom-5 md:right-5 z-40">
       <AnimatePresence>
         {open && (
           <motion.div

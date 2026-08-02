@@ -5,6 +5,8 @@ import FAQItem from '@/components/tab/FAQItem';
 import SectionReveal from '@/components/tab/SectionReveal';
 import ContactDialog from '@/components/tab/ContactDialog';
 import CornerSummary from '@/components/tab/CornerSummary';
+import BottomNav from '@/components/tab/BottomNav';
+import PullToRefresh from '@/components/tab/PullToRefresh';
 
 const FAQS = [
   {
@@ -51,6 +53,7 @@ export default function FAQ() {
           title="Answers for security, privacy, and integration teams."
           subtitle="How TAB recovers stalled work without surveillance — and what to expect when connecting it to your stack."
         />
+        <PullToRefresh onRefresh={() => new Promise((r) => setTimeout(r, 800))}>
         <section className="relative border-t border-tab-ghost">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 py-16 sm:py-24">
             <div className="max-w-3xl">
@@ -62,6 +65,7 @@ export default function FAQ() {
             </div>
           </div>
         </section>
+        </PullToRefresh>
         <section className="relative border-t border-tab-ghost py-20">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 text-center">
             <SectionReveal>
@@ -76,6 +80,7 @@ export default function FAQ() {
         </section>
       </main>
       <Footer />
+      <BottomNav />
       <CornerSummary />
     </div>
   );

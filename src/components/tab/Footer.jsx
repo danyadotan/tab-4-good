@@ -13,7 +13,7 @@ const NAV_LINKS = [
 export default function Footer() {
   return (
     <footer className="relative bg-tab-ink text-tab-base overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 py-16">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 pt-16 pb-32 md:pb-16">
         <p className="font-light text-3xl sm:text-5xl text-tab-base/25 tracking-tight mb-16" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
           from intention to done
         </p>

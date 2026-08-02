@@ -5,6 +5,7 @@ import SectionReveal from '@/components/tab/SectionReveal';
 import ContactDialog from '@/components/tab/ContactDialog';
 import { ShieldCheck, Headset, Database } from 'lucide-react';
 import CornerSummary from '@/components/tab/CornerSummary';
+import BottomNav from '@/components/tab/BottomNav';
 
 const CASES = [
   {
@@ -94,6 +95,7 @@ export default function UseCases() {
         </section>
       </main>
       <Footer />
+      <BottomNav />
       <CornerSummary />
     </div>
   );

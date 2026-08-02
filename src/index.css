@@ -23,6 +23,11 @@
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
     --ring: 258 90% 66%;
+    --tab-base: 249 249 248;
+    --tab-ink: 10 10 11;
+    --tab-accent: 124 58 237;
+    --tab-ghost: 226 232 240;
+    --tab-muted: 107 114 128;
     --radius: 0.25rem;
     --font-heading: Inter, ui-sans-serif, system-ui, sans-serif;
     --font-body: Inter, ui-sans-serif, system-ui, sans-serif;
@@ -58,6 +63,11 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 258 90% 66%;
+    --tab-base: 10 10 11;
+    --tab-ink: 249 249 248;
+    --tab-accent: 167 139 250;
+    --tab-ghost: 38 38 45;
+    --tab-muted: 156 163 175;
   }
 }
 
@@ -73,8 +83,8 @@
 
   body {
     @apply text-foreground font-body antialiased;
-    background-color: #F9F9F8;
-    color: #0A0A0B;
+    background-color: rgb(var(--tab-base));
+    color: rgb(var(--tab-ink));
     font-size: 1.125rem;
     line-height: 1.75;
     letter-spacing: -0.005em;
@@ -89,8 +99,8 @@
   }
 
   ::selection {
-    background-color: #7C3AED;
-    color: #F9F9F8;
+    background-color: rgb(var(--tab-accent));
+    color: rgb(var(--tab-base));
   }
 
   a:focus-visible,
@@ -98,24 +108,45 @@
   input:focus-visible,
   textarea:focus-visible,
   [role="button"]:focus-visible {
-    outline: 2px solid #7C3AED;
+    outline: 2px solid rgb(var(--tab-accent));
     outline-offset: 2px;
     border-radius: 1px;
+  }
+
+  html,
+  body {
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  button,
+  a,
+  header,
+  nav,
+  [role="button"],
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    user-select: none;
+    -webkit-user-select: none;
   }
 }
 
 @layer components {
   .tab-grid {
     background-image:
-      linear-gradient(to right, rgba(124, 58, 237, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+      linear-gradient(to right, rgb(var(--tab-accent) / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--tab-ghost) / 0.6) 1px, transparent 1px);
     background-size: 100% 100%, 64px 64px;
   }
 
   .tab-grid-fine {
     background-image:
-      linear-gradient(to right, rgba(226, 232, 240, 0.45) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(226, 232, 240, 0.45) 1px, transparent 1px);
+      linear-gradient(to right, rgb(var(--tab-ghost) / 0.45) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--tab-ghost) / 0.45) 1px, transparent 1px);
     background-size: 8.333% 100%, 100% 6.25%;
   }
 

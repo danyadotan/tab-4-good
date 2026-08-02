@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ContactDialog from './ContactDialog';
+import ProfileMenu from './ProfileMenu';
 
 const LINKS = [
   { label: 'Thesis', to: '/#thesis' },
@@ -24,9 +25,9 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-[#F9F9F8]/85 backdrop-blur-md border-b border-tab-ghost' : 'bg-transparent border-b border-transparent'
+        scrolled ? 'bg-tab-base/85 backdrop-blur-md border-b border-tab-ghost' : 'bg-transparent border-b border-transparent'
       }`}
-      style={{ transitionTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)' }}
+      style={{ transitionTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)', paddingTop: 'env(safe-area-inset-top)' }}
     >
       <nav className="mx-auto max-w-[1400px] px-4 sm:px-8 h-12 md:h-16 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 group">
@@ -40,11 +41,12 @@ export default function Nav() {
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
           <ContactDialog
             defaultType="Design Partner"
             trigger={<button className="tab-mono text-[0.7rem] px-4 py-2 bg-tab-ink text-tab-base hover:bg-tab-accent transition-colors">Explore a Design Partnership</button>}
           />
+          <ProfileMenu />
         </div>
 
         <button className="md:hidden text-tab-ink h-10 w-10 -mr-1.5 flex items-center justify-center" onClick={() => setOpen(!open)} aria-label="Toggle navigation menu" aria-expanded={open}>
@@ -53,7 +55,7 @@ export default function Nav() {
       </nav>
 
       {open && (
-        <div className="md:hidden border-t border-tab-ghost bg-[#F9F9F8]/95 backdrop-blur-md">
+        <div className="md:hidden border-t border-tab-ghost bg-tab-base/95 backdrop-blur-md">
           <div className="px-4 py-3 flex flex-col gap-1.5">
             {LINKS.map((l) => (
               <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="tab-mono text-[0.65rem] text-tab-muted hover:text-tab-ink transition-colors py-0.5">{l.label}</Link>
@@ -62,6 +64,9 @@ export default function Nav() {
               defaultType="Design Partner"
               trigger={<button className="tab-mono text-[0.65rem] px-4 py-2 mt-1 bg-tab-ink text-tab-base text-left">Explore a Design Partnership</button>}
             />
+            <div className="mt-1 pt-1.5 border-t border-tab-ghost">
+              <ProfileMenu />
+            </div>
           </div>
         </div>
       )}

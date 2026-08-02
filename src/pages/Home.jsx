@@ -14,11 +14,14 @@ import Founder from '@/components/tab/Founder';
 import FinalCTA from '@/components/tab/FinalCTA';
 import Footer from '@/components/tab/Footer';
 import CornerSummary from '@/components/tab/CornerSummary';
+import BottomNav from '@/components/tab/BottomNav';
+import PullToRefresh from '@/components/tab/PullToRefresh';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-tab-base text-tab-ink">
       <Nav />
+      <PullToRefresh onRefresh={() => new Promise((r) => setTimeout(r, 800))}>
       <main>
         <Hero />
         <Problem />
@@ -34,7 +37,9 @@ export default function Home() {
         <Founder />
         <FinalCTA />
       </main>
+      </PullToRefresh>
       <Footer />
+      <BottomNav />
       <CornerSummary />
     </div>
   );

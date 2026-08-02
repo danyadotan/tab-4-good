@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// tab palette resolves to CSS vars (see src/index.css) for auto dark mode
 module.exports = {
     darkMode: ["class"],
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
@@ -64,11 +65,11 @@ module.exports = {
   				ring: 'hsl(var(--sidebar-ring))'
   			},
   			tab: {
-  				base: '#F9F9F8',
-  				ink: '#0A0A0B',
-  				accent: '#7C3AED',
-  				ghost: '#E2E8F0',
-  				muted: '#6B7280'
+  				base: 'rgb(var(--tab-base) / <alpha-value>)',
+  				ink: 'rgb(var(--tab-ink) / <alpha-value>)',
+  				accent: 'rgb(var(--tab-accent) / <alpha-value>)',
+  				ghost: 'rgb(var(--tab-ghost) / <alpha-value>)',
+  				muted: 'rgb(var(--tab-muted) / <alpha-value>)'
   			}
   		},
   		fontFamily: {

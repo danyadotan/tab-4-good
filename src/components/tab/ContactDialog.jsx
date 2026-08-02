@@ -44,7 +44,7 @@ export default function ContactDialog({ trigger, defaultType = 'Design Partner' 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-[480px] bg-[#F9F9F8] border-tab-ghost">
+      <DialogContent className="sm:max-w-[480px] bg-tab-base border-tab-ghost">
         {submitted ? (
           <div className="py-10 text-center">
             <div className="mx-auto mb-5 h-12 w-12 rounded-full bg-tab-accent/10 flex items-center justify-center">
