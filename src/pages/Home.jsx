@@ -4,6 +4,7 @@ import Problem from '@/components/tab/Problem';
 import Architecture from '@/components/tab/Architecture';
 import Capabilities from '@/components/tab/Capabilities';
 import Differentiator from '@/components/tab/Differentiator';
+import UseCases from '@/components/tab/UseCases';
 import HowItWorks from '@/components/tab/HowItWorks';
 import WhyNow from '@/components/tab/WhyNow';
 import Positioning from '@/components/tab/Positioning';
@@ -23,6 +24,7 @@ export default function Home() {
         <Architecture />
         <Capabilities />
         <Differentiator />
+        <UseCases />
         <HowItWorks />
         <WhyNow />
         <Positioning />
