@@ -1,3 +1,14 @@
+import { Link } from 'react-router-dom';
+
+const NAV_LINKS = [
+  { label: 'Thesis', to: '/#thesis' },
+  { label: 'Product', to: '/#product' },
+  { label: 'Founder', to: '/#founder' },
+  { label: 'Use Cases', to: '/use-cases' },
+  { label: 'FAQ', to: '/faq' },
+  { label: 'Glossary', to: '/glossary' },
+];
+
 export default function Footer() {
   return (
     <footer className="relative bg-tab-ink text-tab-base overflow-hidden">
@@ -5,13 +16,21 @@ export default function Footer() {
         <p className="font-light text-3xl sm:text-5xl text-tab-base/25 tracking-tight mb-16" style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}>
           from intention to done
         </p>
-        <div className="grid sm:grid-cols-3 gap-10 border-t border-white/10 pt-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 border-t border-white/10 pt-10">
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="h-2 w-2 bg-tab-accent rounded-full"></span>
               <span className="font-heading font-semibold">TAB@Work</span>
             </div>
             <p className="text-sm text-tab-base/50">Execution infrastructure for AI-native organizations.</p>
+          </div>
+          <div>
+            <p className="tab-mono text-[0.6rem] text-tab-base/40 mb-3">NAVIGATE</p>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+              {NAV_LINKS.map((l) => (
+                <Link key={l.to} to={l.to} className="text-tab-base/70 hover:text-tab-accent transition-colors w-fit">{l.label}</Link>
+              ))}
+            </div>
           </div>
           <div>
             <p className="tab-mono text-[0.6rem] text-tab-base/40 mb-3">LOCATION</p>
