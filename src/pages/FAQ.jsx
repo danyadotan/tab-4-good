@@ -4,6 +4,7 @@ import PageHero from '@/components/tab/PageHero';
 import FAQItem from '@/components/tab/FAQItem';
 import SectionReveal from '@/components/tab/SectionReveal';
 import ContactDialog from '@/components/tab/ContactDialog';
+import CornerSummary from '@/components/tab/CornerSummary';
 
 const FAQS = [
   {
@@ -75,6 +76,7 @@ export default function FAQ() {
         </section>
       </main>
       <Footer />
+      <CornerSummary />
     </div>
   );
 }

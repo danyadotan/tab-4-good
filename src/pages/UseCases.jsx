@@ -4,6 +4,7 @@ import PageHero from '@/components/tab/PageHero';
 import SectionReveal from '@/components/tab/SectionReveal';
 import ContactDialog from '@/components/tab/ContactDialog';
 import { ShieldCheck, Headset, Database } from 'lucide-react';
+import CornerSummary from '@/components/tab/CornerSummary';
 
 const CASES = [
   {
@@ -93,6 +94,7 @@ export default function UseCases() {
         </section>
       </main>
       <Footer />
+      <CornerSummary />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import Nav from '@/components/tab/Nav';
 import Footer from '@/components/tab/Footer';
 import PageHero from '@/components/tab/PageHero';
 import SectionReveal from '@/components/tab/SectionReveal';
+import CornerSummary from '@/components/tab/CornerSummary';
 
 const TERMS = [
   {
@@ -102,6 +103,7 @@ export default function Glossary() {
         </section>
       </main>
       <Footer />
+      <CornerSummary />
     </div>
   );
 }

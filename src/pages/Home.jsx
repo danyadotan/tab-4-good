@@ -13,6 +13,7 @@ import Validation from '@/components/tab/Validation';
 import Founder from '@/components/tab/Founder';
 import FinalCTA from '@/components/tab/FinalCTA';
 import Footer from '@/components/tab/Footer';
+import CornerSummary from '@/components/tab/CornerSummary';
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <CornerSummary />
     </div>
   );
 }
