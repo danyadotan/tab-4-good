@@ -7,7 +7,7 @@ export default function Founder() {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-4">
             <SectionReveal>
-              <p className="tab-mono text-[0.65rem] text-tab-accent mb-5">08 — FOUNDER</p>
+              <p className="tab-mono text-[0.65rem] text-tab-accent mb-5">10 — FOUNDER</p>
               <div className="border border-tab-ghost aspect-square tab-grid-fine flex items-center justify-center bg-tab-base">
                 <span className="font-heading font-semibold text-5xl text-tab-ink tracking-tight">DD</span>
               </div>

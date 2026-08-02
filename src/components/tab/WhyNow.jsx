@@ -35,6 +35,11 @@ export default function WhyNow() {
             </SectionReveal>
           ))}
         </div>
+        <SectionReveal delay={0.2}>
+          <p className="mt-10 text-lg text-tab-base/80 max-w-3xl leading-relaxed">
+            These numbers are not a motivation problem. They are an execution breakdown — work stalling between the people, systems, and agents meant to carry it. The fix is not more effort or more intelligence. It is recovery.
+          </p>
+        </SectionReveal>
       </div>
     </section>
   );

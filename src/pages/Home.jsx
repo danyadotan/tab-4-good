@@ -6,6 +6,8 @@ import Capabilities from '@/components/tab/Capabilities';
 import Differentiator from '@/components/tab/Differentiator';
 import HowItWorks from '@/components/tab/HowItWorks';
 import WhyNow from '@/components/tab/WhyNow';
+import Positioning from '@/components/tab/Positioning';
+import Roadmap from '@/components/tab/Roadmap';
 import Validation from '@/components/tab/Validation';
 import Founder from '@/components/tab/Founder';
 import FinalCTA from '@/components/tab/FinalCTA';
@@ -23,6 +25,8 @@ export default function Home() {
         <Differentiator />
         <HowItWorks />
         <WhyNow />
+        <Positioning />
+        <Roadmap />
         <Validation />
         <Founder />
         <FinalCTA />

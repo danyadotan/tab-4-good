@@ -12,7 +12,7 @@ export default function Validation() {
     <section id="validation" className="relative tab-section border-t border-tab-ghost">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <SectionReveal>
-          <p className="tab-mono text-[0.65rem] text-tab-accent mb-5">07 — EARLY VALIDATION</p>
+          <p className="tab-mono text-[0.65rem] text-tab-accent mb-5">09 — EARLY VALIDATION</p>
           <h2 className="font-heading font-semibold tracking-[-0.02em] text-tab-ink text-3xl sm:text-4xl lg:text-5xl leading-[1.1] max-w-3xl mb-16">
             Validation where execution breaks first.
           </h2>

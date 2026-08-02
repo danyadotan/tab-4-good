@@ -20,7 +20,7 @@ export default function Hero() {
             </SectionReveal>
             <SectionReveal delay={0.2}>
               <p className="text-lg text-tab-muted max-w-xl mb-8 leading-relaxed">
-                TAB detects execution gaps, restores stalled work, and coordinates employees, managers and AI — without replacing existing workflows.
+                TAB detects execution gaps, restores stalled work, and routes recovery to the person, system, or agent best positioned to act — without replacing existing workflows.
               </p>
             </SectionReveal>
             <SectionReveal delay={0.3}>
