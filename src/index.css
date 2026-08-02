@@ -76,7 +76,16 @@
     background-color: #F9F9F8;
     color: #0A0A0B;
     font-size: 1.125rem;
-    line-height: 1.6;
+    line-height: 1.75;
+    letter-spacing: -0.005em;
+  }
+
+  p {
+    margin-bottom: 1.25rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 
   ::selection {
@@ -117,8 +126,8 @@
   }
 
   .tab-section {
-    padding-top: clamp(5rem, 12vw, 10rem);
-    padding-bottom: clamp(5rem, 12vw, 10rem);
+    padding-top: clamp(6rem, 13vw, 11rem);
+    padding-bottom: clamp(6rem, 13vw, 11rem);
   }
 
   .tab-divider {
