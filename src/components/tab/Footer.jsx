@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import DownloadOverview from './DownloadOverview';
 
 const NAV_LINKS = [
   { label: 'Thesis', to: '/#thesis' },
@@ -41,6 +42,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-sm">
               <a href="mailto:danya@dynamicbridge.io" className="text-tab-base/70 hover:text-tab-accent transition-colors">danya@dynamicbridge.io</a>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-tab-base/70 hover:text-tab-accent transition-colors">LinkedIn</a>
+              <DownloadOverview className="text-tab-base/70 hover:text-tab-accent" label="Download Overview (PDF)" />
             </div>
           </div>
         </div>

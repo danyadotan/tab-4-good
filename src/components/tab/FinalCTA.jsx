@@ -1,5 +1,6 @@
 import SectionReveal from './SectionReveal';
 import ContactDialog from './ContactDialog';
+import DownloadOverview from './DownloadOverview';
 
 const ASK = ['3–5 enterprise design partners', 'Live pilot environments', 'Go-to-market & platform support'];
 
@@ -32,6 +33,9 @@ export default function FinalCTA() {
               defaultType="Investor"
               trigger={<button className="px-7 py-3.5 border border-tab-ghost text-tab-ink tab-mono text-xs hover:border-tab-accent hover:text-tab-accent transition-colors">Talk to us as an Investor</button>}
             />
+          </div>
+          <div className="mt-6">
+            <DownloadOverview className="text-tab-muted hover:text-tab-accent" />
           </div>
         </SectionReveal>
       </div>
