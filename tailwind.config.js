@@ -59,35 +59,50 @@ module.exports = {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
+  			},
+  			tab: {
+  				base: '#F9F9F8',
+  				ink: '#0A0A0B',
+  				accent: '#7C3AED',
+  				ghost: '#E2E8F0',
+  				muted: '#6B7280'
   			}
   		},
   		fontFamily: {
-  			heading: ['var(--font-heading)'],
-  			body: ['var(--font-body)'],
-  			display: ['var(--font-display)'],
-  			mono: ['var(--font-mono)']
+  			heading: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  			body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  			display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  			mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace']
   		},
   		keyframes: {
   			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
+  				from: { height: '0' },
+  				to: { height: 'var(--radix-accordion-content-height)' }
   			},
   			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
+  				from: { height: 'var(--radix-accordion-content-height)' },
+  				to: { height: '0' }
+  			},
+  			'tab-pulse': {
+  				'0%': { transform: 'translateX(-100%)', opacity: '0' },
+  				'20%': { opacity: '1' },
+  				'100%': { transform: 'translateX(120%)', opacity: '0' }
+  			},
+  			'tab-node': {
+  				'0%, 100%': { opacity: '0.25' },
+  				'50%': { opacity: '1' }
+  			},
+  			'tab-flow': {
+  				'0%': { strokeDashoffset: '200' },
+  				'100%': { strokeDashoffset: '0' }
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'tab-pulse': 'tab-pulse 3s cubic-bezier(0.19, 1, 0.22, 1) infinite',
+  			'tab-node': 'tab-node 2.4s cubic-bezier(0.19, 1, 0.22, 1) infinite',
+  			'tab-flow': 'tab-flow 4s cubic-bezier(0.19, 1, 0.22, 1) infinite'
   		}
   	}
   },
