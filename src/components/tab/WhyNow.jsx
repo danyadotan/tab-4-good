@@ -21,7 +21,7 @@ export default function WhyNow() {
             Every company is becoming AI-native. Most are not execution-ready.
           </h2>
           <p className="font-heading font-medium text-xl sm:text-2xl text-tab-base mb-16 max-w-3xl">
-            The next enterprise bottleneck is not intelligence. It is execution.
+            SaaS gave every team its own app. It never gave the organization a way to execute across them. The next bottleneck is not intelligence — it is the infrastructure to act on it.
           </p>
         </SectionReveal>
         <div className="grid sm:grid-cols-3 gap-px bg-white/10 border border-white/10">
@@ -37,7 +37,7 @@ export default function WhyNow() {
         </div>
         <SectionReveal delay={0.2}>
           <p className="mt-10 text-lg text-tab-base/80 max-w-3xl leading-relaxed">
-            These numbers are not a motivation problem. They are an execution breakdown — work stalling between the people, systems, and agents meant to carry it. The fix is not more effort or more intelligence. It is recovery.
+            SaaS tools were built to optimize work inside each team. None were built to recover the work that falls between them. As AI multiplies what each tool can do, the seams widen — and the cost of dropped handoffs compounds. The fix is not another app. It is infrastructure: a layer that detects the gaps and routes recovery across the entire stack.
           </p>
         </SectionReveal>
       </div>
