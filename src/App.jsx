@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
 import FAQ from '@/pages/FAQ';
 import UseCases from '@/pages/UseCases';
+import Glossary from '@/pages/Glossary';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -41,6 +42,7 @@ const AuthenticatedApp = () => {
       <Route path="/" element={<Home />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/use-cases" element={<UseCases />} />
+      <Route path="/glossary" element={<Glossary />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
