@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import SectionReveal from './SectionReveal';
 
 const EXPRESSIONS = [
@@ -10,6 +11,7 @@ const EXPRESSIONS = [
 const CORE = ['Observation logic', 'Breakdown detection', 'Recovery orchestration', 'Continuity model'];
 
 export default function Differentiator() {
+  const [active, setActive] = useState(0);
   return (
     <section id="differentiator" className="relative tab-section border-t border-tab-ghost">
       <div className="absolute inset-0 tab-grid-fine opacity-40 pointer-events-none" aria-hidden="true"></div>
@@ -32,16 +34,28 @@ export default function Differentiator() {
                 ))}
               </ul>
             </div>
-            <p className="tab-mono text-[0.6rem] text-tab-base/50 mt-10">Stable across every customer.</p>
+            <div className="mt-10 pt-6 border-t border-white/10">
+              <p className="tab-mono text-[0.6rem] text-tab-base/40 mb-2">NOW EXPRESSING</p>
+              <p className="font-heading font-medium text-tab-base">{EXPRESSIONS[active].ctx}</p>
+            </div>
           </div>
           <div className="lg:col-span-7 bg-tab-base">
             <div className="grid sm:grid-cols-2">
               {EXPRESSIONS.map((e, i) => (
-                <div key={e.ctx} className={`p-7 sm:p-8 ${i % 2 === 1 ? 'sm:border-l' : ''} ${i < 2 ? 'border-b' : ''} border-tab-ghost`}>
-                  <p className="tab-mono text-[0.6rem] text-tab-accent mb-3">ADAPTIVE LAYER</p>
+                <button
+                  key={e.ctx}
+                  type="button"
+                  onMouseEnter={() => setActive(i)}
+                  onFocus={() => setActive(i)}
+                  onClick={() => setActive(i)}
+                  className={`text-left p-7 sm:p-8 transition-colors ${i % 2 === 1 ? 'sm:border-l' : ''} ${i < 2 ? 'border-b' : ''} border-tab-ghost ${active === i ? 'bg-tab-accent/5' : 'bg-tab-base'}`}
+                  style={{ transitionTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)' }}
+                >
+                  <p className={`tab-mono text-[0.6rem] mb-3 transition-colors ${active === i ? 'text-tab-accent' : 'text-tab-muted'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)' }}>ADAPTIVE LAYER</p>
                   <h4 className="font-heading font-medium text-tab-ink mb-3">{e.ctx}</h4>
                   <p className="text-sm text-tab-muted leading-relaxed">{e.expr}</p>
-                </div>
+                  <span className={`block mt-4 h-px transition-all ${active === i ? 'w-10 bg-tab-accent' : 'w-0 bg-transparent'}`} style={{ transitionTimingFunction: 'cubic-bezier(0.19, 1, 0.22, 1)' }}></span>
+                </button>
               ))}
             </div>
           </div>
