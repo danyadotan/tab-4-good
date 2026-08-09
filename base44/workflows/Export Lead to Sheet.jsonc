@@ -4,7 +4,7 @@
     "document": {
       "dsl": "1.0.0",
       "name": "export_lead_to_sheet",
-      "version": "1.0",
+      "version": "1.1",
       "namespace": "base44"
     },
     "do": [
@@ -14,14 +14,7 @@
           "with": {
             "function_name": "exportLeadToSheet",
             "args": {
-              "lead": {
-                "type": "${ .trigger.data.type }",
-                "name": "${ .trigger.data.name }",
-                "company": "${ .trigger.data.company }",
-                "note": "${ .trigger.data.note }",
-                "email": "${ .trigger.data.email }",
-                "created_date": "${ .trigger.data.created_date }"
-              }
+              "lead_id": "${ .trigger.data.id }"
             }
           },
           "then": "end",
@@ -33,7 +26,7 @@
       }
     ]
   },
-  "description": "Appends every new lead form submission to a Google Sheet for real-time tracking of investor and partner interest.",
+  "description": "Appends every new lead form submission to a Google Sheet for real-time tracking of investor and partner interest. Passes only the lead id; the function verifies the lead exists before exporting.",
   "trigger": {
     "condition": null,
     "config": {

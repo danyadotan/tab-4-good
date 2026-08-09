@@ -35,10 +35,23 @@ async function createSheet(accessToken) {
 export default async function(req) {
   try {
     const base44 = createClientFromRequest(req);
-    const { accessToken } = await base44.asServiceRole.connectors.getConnection('googlesheets');
 
     const body = await req.json().catch(() => ({}));
-    const lead = body.lead || {};
+    const leadId = body.lead_id || (body.lead && body.lead.id);
+    if (!leadId) {
+      return Response.json({ error: 'lead_id is required' }, { status: 400 });
+    }
+
+    // Trust boundary: only export leads that actually exist in the database.
+    // This binds the Google Sheets write to a real Lead record, so the endpoint
+    // cannot be used to inject arbitrary rows using the owner's Google credentials.
+    const lead = await base44.asServiceRole.entities.Lead.get(leadId).catch(() => null);
+    if (!lead) {
+      return Response.json({ error: 'Lead not found' }, { status: 404 });
+    }
+
+    const { accessToken } = await base44.asServiceRole.connectors.getConnection('googlesheets');
+
     const row = [
       lead.created_date || new Date().toISOString(),
       lead.type || '',
