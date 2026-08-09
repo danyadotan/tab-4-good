@@ -8,6 +8,8 @@ const NAV_LINKS = [
   { label: 'Use Cases', to: '/use-cases' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Glossary', to: '/glossary' },
+  { label: 'Executive Summary', to: '/executive-summary' },
+  { label: 'Investor Q&A', to: '/investor-qa' },
 ];
 
 export default function Footer() {
