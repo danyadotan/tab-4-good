@@ -86,12 +86,12 @@
     background-color: rgb(var(--tab-base));
     color: rgb(var(--tab-ink));
     font-size: 1.125rem;
-    line-height: 1.75;
+    line-height: 1.8;
     letter-spacing: -0.005em;
   }
 
   p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
   }
 
   p:last-child {
