@@ -15,6 +15,10 @@ import UseCases from '@/pages/UseCases';
 import Glossary from '@/pages/Glossary';
 import ExecutiveSummary from '@/pages/ExecutiveSummary';
 import InvestorQA from '@/pages/InvestorQA';
+import StrategyOverview from '@/pages/StrategyOverview';
+import OperationalRoadmap from '@/pages/OperationalRoadmap';
+import Integrations from '@/pages/Integrations';
+import Privacy from '@/pages/Privacy';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -58,6 +62,10 @@ const AuthenticatedApp = () => {
           <Route path="/glossary" element={<Glossary />} />
           <Route path="/executive-summary" element={<ExecutiveSummary />} />
           <Route path="/investor-qa" element={<InvestorQA />} />
+          <Route path="/strategy-overview" element={<StrategyOverview />} />
+          <Route path="/roadmap" element={<OperationalRoadmap />} />
+          <Route path="/integrations" element={<Integrations />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </motion.div>
