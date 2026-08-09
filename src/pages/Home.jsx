@@ -10,6 +10,7 @@ import WhyNow from '@/components/tab/WhyNow';
 import Positioning from '@/components/tab/Positioning';
 import Roadmap from '@/components/tab/Roadmap';
 import Validation from '@/components/tab/Validation';
+import Metrics from '@/components/tab/Metrics';
 import Founder from '@/components/tab/Founder';
 import FinalCTA from '@/components/tab/FinalCTA';
 import Footer from '@/components/tab/Footer';
@@ -34,6 +35,7 @@ export default function Home() {
         <Positioning />
         <Roadmap />
         <Validation />
+        <Metrics />
         <Founder />
         <FinalCTA />
       </main>
