@@ -5,7 +5,7 @@ import DocSection from '@/components/tab/DocSection';
 import SectionReveal from '@/components/tab/SectionReveal';
 import CornerSummary from '@/components/tab/CornerSummary';
 import BottomNav from '@/components/tab/BottomNav';
-import { Layers, Eye, Repeat, Workflow, Bot, ShieldCheck, Headset, Database, Handshake, Phone, FlaskConical } from 'lucide-react';
+import { Layers, Eye, Repeat, Workflow, Bot, ShieldCheck, Headset, Database, Handshake, Phone, FlaskConical, Target, ShieldAlert, Lock, Split } from 'lucide-react';
 
 const PROBLEM = [
   { icon: Layers, t: 'Every team has a tool. No one has the workflow.', b: 'Work crosses teams, systems, and agents. No tool owns the handoff — so the handoff is where work dies.' },
@@ -58,6 +58,13 @@ const ROADMAP = [
   { label: 'NOW', t: 'Pilot', b: 'Embedded pilots with 3–5 enterprise design partners across customer operations and AI transformation.' },
   { label: 'NEXT 6 MONTHS', t: 'Embed', b: 'Deepen integrations. Move from detection toward autonomous recovery inside approved guardrails.' },
   { label: '12 MONTHS', t: 'Scale', b: 'Repeatable deployment across functions. Turn pilot evidence into a category — execution infrastructure for AI-native organizations.' },
+];
+
+const CRITICAL = [
+  { icon: Target, t: 'A single number defines success', b: 'Pilot success is measured in one number: the share of stalls the system recovers autonomously, without human intervention, with detection under five minutes. The first 90-day target: 70% autonomous recovery across three defined friction scenarios (IT governance, customer ops, data workflows). A verifiable metric — not "adoption" or "satisfaction", but direct measurement of TAB\'s ability to return work that would otherwise fall between the tools.' },
+  { icon: ShieldAlert, t: 'The real risk — and the answer to it', b: 'The expected question: why wouldn\'t Slack, Asana, or ServiceNow add this themselves? The answer: they can add an alert, but not recovery. Recovery requires reading cross-tool, in real time, from all of the customer\'s systems, and acting across their own boundaries. That is a structural conflict: the big tool cannot be the judge in its own trial. TAB does not compete with existing tools — it sits beneath them, as a coordination layer none of them can or wants to be.' },
+  { icon: Lock, t: 'Anonymity as a sales shield', b: 'TAB\'s anonymity is not only an ethical value — it is a market-entry engine. A "coordination" tool usually meets organizational resistance rooted in fear of employee surveillance. TAB enters faster because it threatens no employee: it measures friction events, not people, and anonymity is an architectural property, not a promise. The ethics, in this case, become an accelerator of the deal rather than a cost.' },
+  { icon: Split, t: 'Keep the pipelines separate', b: 'Leads must be classified precisely between two types: Design Partner (design partner — goal: product validation and co-development) and Investor (goal: return and measured risk). The follow-up conversation, the message, and the terms differ fundamentally between the two. Mixing them in the pipeline creates communication friction and carries a high cost at a late stage — exactly what TAB itself exists to prevent.' },
 ];
 
 const ASK = ['3–5 enterprise design partners', 'Live pilot environments', 'Go-to-market & platform support'];
@@ -219,6 +226,20 @@ export default function ExecutiveSummary() {
           <SectionReveal>
             <p className="tab-mono text-[0.6rem] text-tab-muted">Danya Dotan · Founder, TAB@Work · Tel Aviv, Israel</p>
           </SectionReveal>
+        </DocSection>
+
+        <DocSection id="critical" eyebrow="11 — WHAT MUST BE RIGHT" title="Four points worth getting right before sending." intro="The synthesis holds, but four points deserve to be stated explicitly before this goes out — a measurable win, the honest answer to the obvious risk, anonymity as a sales advantage, and a clean separation between the two pipelines.">
+          <div className="grid sm:grid-cols-2 gap-px bg-tab-ghost border border-tab-ghost">
+            {CRITICAL.map((it, i) => (
+              <SectionReveal key={it.t} delay={i * 0.08}>
+                <div className="bg-tab-base p-8 h-full">
+                  <it.icon size={22} strokeWidth={1.5} className="text-tab-accent mb-5" />
+                  <h3 className="font-heading font-medium text-tab-ink text-lg mb-3">{it.t}</h3>
+                  <p className="text-sm text-tab-muted leading-relaxed">{it.b}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
         </DocSection>
       </main>
       <Footer />
