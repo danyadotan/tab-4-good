@@ -30,6 +30,10 @@ const SECTIONS = [
     p: 'TAB measures friction events, not personal behavior. No sentiment detection, no burnout scoring, no individual profiling — enforced by architecture, not policy.',
   },
   {
+    h: 'Where TAB Stands',
+    p: 'The technical infrastructure is built: the core engine, friction-event detection, recovery routing, the adaptive wrapper, and the anonymous-by-architecture data model. What is not yet proven is the risk funding removes — pilot proof in 3–5 live environments, native connector depth, and the friction-event metric as a repeatable benchmark. The window now is the validation, not the build: design partners shape the recovery model before it hardens; investors fund the proof that turns infrastructure into a category.',
+  },
+  {
     h: 'The Ask',
     p: '3–5 enterprise design partners. Live pilot environments. Go-to-market & platform support. Built on Base44, joining the Base4U accelerator.',
   },
