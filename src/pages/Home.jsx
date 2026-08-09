@@ -1,5 +1,6 @@
 import Nav from '@/components/tab/Nav';
 import Hero from '@/components/tab/Hero';
+import WhereWeStand from '@/components/tab/WhereWeStand';
 import Problem from '@/components/tab/Problem';
 import Architecture from '@/components/tab/Architecture';
 import Capabilities from '@/components/tab/Capabilities';
@@ -26,6 +27,7 @@ export default function Home() {
       <PullToRefresh onRefresh={() => new Promise((r) => setTimeout(r, 800))}>
       <main>
         <Hero />
+        <WhereWeStand />
         <Problem />
         <Architecture />
         <Capabilities />
