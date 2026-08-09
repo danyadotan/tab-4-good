@@ -36,15 +36,22 @@ export default async function(req) {
   try {
     const base44 = createClientFromRequest(req);
 
+    // Trust boundary: only authenticated admins may trigger an export. The
+    // workflow that calls this function runs as the app owner (admin); direct
+    // unauthenticated calls are rejected before any service-role or connector use.
+    const user = await base44.auth.me();
+    if (!user || user.role !== 'admin') {
+      return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     const body = await req.json().catch(() => ({}));
     const leadId = body.lead_id || (body.lead && body.lead.id);
     if (!leadId) {
       return Response.json({ error: 'lead_id is required' }, { status: 400 });
     }
 
-    // Trust boundary: only export leads that actually exist in the database.
-    // This binds the Google Sheets write to a real Lead record, so the endpoint
-    // cannot be used to inject arbitrary rows using the owner's Google credentials.
+    // Only export leads that actually exist in the database, binding the Google
+    // Sheets write to a real Lead record.
     const lead = await base44.asServiceRole.entities.Lead.get(leadId).catch(() => null);
     if (!lead) {
       return Response.json({ error: 'Lead not found' }, { status: 404 });
