@@ -6,6 +6,7 @@ import Capabilities from '@/components/tab/Capabilities';
 import Differentiator from '@/components/tab/Differentiator';
 import UseCases from '@/components/tab/UseCases';
 import HowItWorks from '@/components/tab/HowItWorks';
+import DemoVideo from '@/components/tab/DemoVideo';
 import WhyNow from '@/components/tab/WhyNow';
 import Positioning from '@/components/tab/Positioning';
 import Roadmap from '@/components/tab/Roadmap';
@@ -31,6 +32,7 @@ export default function Home() {
         <Differentiator />
         <UseCases />
         <HowItWorks />
+        <DemoVideo />
         <WhyNow />
         <Positioning />
         <Roadmap />
