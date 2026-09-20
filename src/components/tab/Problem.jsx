@@ -1,7 +1,7 @@
 import SectionReveal from './SectionReveal';
 import { Layers, Eye, Repeat } from 'lucide-react';
 
-const FRICTION_IMG = 'https://media.base44.com/images/public/6a6ed39f0305566485de08b3/11af604f4_generated_af736af1.png';
+const FRICTION_IMG = '/images/execution-friction.png';
 
 const ITEMS = [
   { icon: Layers, title: 'Every team has a tool. No one has the workflow.', body: 'SaaS gave each team a purpose-built app, but work crosses teams, systems, and agents. No tool owns the handoff — so the handoff is where work dies.' },

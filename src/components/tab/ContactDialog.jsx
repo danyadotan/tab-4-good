@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from '@/components/ui/dialog';
-import { base44 } from '@/api/base44Client';
 import { Loader2, Check } from 'lucide-react';
 
 export default function ContactDialog({ trigger, defaultType = 'Design Partner' }) {
@@ -21,7 +20,16 @@ export default function ContactDialog({ trigger, defaultType = 'Design Partner' 
     }
     setLoading(true);
     try {
-      await base44.entities.Lead.create(form);
+      const subject = `TAB@Work ${form.type} inquiry from ${form.name.trim()}`;
+      const body = [
+        `Name: ${form.name.trim()}`,
+        `Company: ${form.company.trim() || 'Not provided'}`,
+        `Email: ${form.email.trim()}`,
+        `Interest: ${form.type}`,
+        '',
+        form.note.trim() || 'No note provided.',
+      ].join('\n');
+      window.location.href = `mailto:danya@dynamicbridge.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       setSubmitted(true);
       setLoading(false);
     } catch (err) {
@@ -51,7 +59,7 @@ export default function ContactDialog({ trigger, defaultType = 'Design Partner' 
               <Check size={24} className="text-tab-accent" strokeWidth={2} />
             </div>
             <h3 className="font-heading font-semibold text-tab-ink text-xl mb-2">Thank you.</h3>
-            <p className="text-tab-muted">We've received your request and will be in touch shortly.</p>
+            <p className="text-tab-muted">Your email app has been opened with the request. Send the message to complete it.</p>
           </div>
         ) : (
           <>
@@ -87,7 +95,7 @@ export default function ContactDialog({ trigger, defaultType = 'Design Partner' 
               {error && <p className="text-sm text-red-600">{error}</p>}
               <button type="submit" disabled={loading} className="w-full py-3.5 bg-tab-ink text-tab-base tab-mono text-xs hover:bg-tab-accent transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
                 {loading && <Loader2 size={14} className="animate-spin" />}
-                {loading ? 'Sending…' : 'Submit'}
+                {loading ? 'Preparing…' : 'Continue in email'}
               </button>
             </form>
           </>

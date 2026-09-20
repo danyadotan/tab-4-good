@@ -5,7 +5,7 @@ import DocSection from '@/components/tab/DocSection';
 import SectionReveal from '@/components/tab/SectionReveal';
 import CornerSummary from '@/components/tab/CornerSummary';
 import BottomNav from '@/components/tab/BottomNav';
-import { Layers, Eye, Repeat, Workflow, Bot, ShieldCheck, Headset, Database, Handshake, Phone, FlaskConical, Target, ShieldAlert, Lock, Split } from 'lucide-react';
+import { Layers, Eye, Repeat, Workflow, Bot, Handshake, Phone, FlaskConical, Target, ShieldAlert, Lock, Split } from 'lucide-react';
 
 const PROBLEM = [
   { icon: Layers, t: 'Every team has a tool. No one has the workflow.', b: 'Work crosses teams, systems, and agents. No tool owns the handoff — so the handoff is where work dies.' },

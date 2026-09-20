@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import ContactDialog from './ContactDialog';
-import ProfileMenu from './ProfileMenu';
 
 const LINKS = [
   { label: 'Thesis', to: '/#thesis' },
@@ -46,7 +45,6 @@ export default function Nav() {
             defaultType="Design Partner"
             trigger={<button className="tab-mono text-[0.7rem] px-4 py-2 bg-tab-ink text-tab-base hover:bg-tab-accent transition-colors">Explore a Design Partnership</button>}
           />
-          <ProfileMenu />
         </div>
 
         <button className="md:hidden text-tab-ink h-10 w-10 -mr-1.5 flex items-center justify-center" onClick={() => setOpen(!open)} aria-label="Toggle navigation menu" aria-expanded={open}>
@@ -65,8 +63,7 @@ export default function Nav() {
               trigger={<button className="tab-mono text-[0.65rem] px-4 py-2 mt-1 bg-tab-ink text-tab-base text-left">Explore a Design Partnership</button>}
             />
             <div className="mt-1 pt-1.5 border-t border-tab-ghost">
-              <ProfileMenu />
-            </div>
+                </div>
           </div>
         </div>
       )}
