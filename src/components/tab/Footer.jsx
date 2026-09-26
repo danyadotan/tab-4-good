@@ -44,6 +44,10 @@ export default function Footer() {
             <div className="flex flex-col gap-2 text-sm">
               <a href="mailto:danya@dynamicbridge.io" className="text-tab-base/70 hover:text-tab-accent transition-colors">danya@dynamicbridge.io</a>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-tab-base/70 hover:text-tab-accent transition-colors">LinkedIn</a>
+              <div className="flex flex-col gap-1">
+                <a href="https://github.com/danyadotan/execution-hygiene-agent" target="_blank" rel="noopener noreferrer" className="text-tab-base/70 hover:text-tab-accent transition-colors">Open source on GitHub</a>
+                <span className="text-xs text-tab-base/50">The open-source hygiene check behind TAB.</span>
+              </div>
               <DownloadOverview className="text-tab-base/70 hover:text-tab-accent" label="Download Overview (PDF)" />
             </div>
           </div>

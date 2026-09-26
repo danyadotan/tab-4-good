@@ -14,7 +14,7 @@ export default function FinalCTA() {
             Build the execution layer with us.
           </h2>
           <p className="text-lg text-tab-muted max-w-xl mx-auto mb-8">
-            We’re building TAB on Base44 and joining the Base4U accelerator to validate execution recovery with real enterprises — and looking for the operators and investors who see the same bottleneck.
+            We’re looking for the operators and investors who see the same bottleneck.
           </p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10">
             {ASK.map((a) => (

@@ -95,12 +95,12 @@ const GROUPS = [
       },
       {
         q: "What's the go-to-market motion?",
-        a: 'Design-partner-led. We enter live enterprise environments with 3–5 design partners across customer operations and AI transformation, validate breakdown detection and recovery, and turn that evidence into a repeatable deployment playbook. The accelerator provides the go-to-market and platform support to move from pilot to category.',
+        a: 'Design-partner-led. We enter live enterprise environments with 3–5 design partners across customer operations and AI transformation, validate breakdown detection and recovery, and turn that evidence into a repeatable deployment playbook.',
       },
     ],
   },
   {
-    label: 'TRACTION, TEAM & ACCELERATOR FIT',
+    label: 'TRACTION & TEAM',
     items: [
       {
         q: 'What traction do you have?',
@@ -111,12 +111,8 @@ const GROUPS = [
         a: 'Danya Dotan — a systems architect combining behavioral science, systems thinking, and AI product design. Her work focuses on execution recovery, operational continuity, and human–AI collaboration: the infrastructure organizations need to adopt AI through trust rather than surveillance. The thesis comes from directly studying where work breaks first.',
       },
       {
-        q: 'Why Base44 and the Base4U accelerator?',
-        a: 'We are building TAB on Base44 because the platform lets us ship the coordination and recovery layer rapidly against real enterprise environments without reinventing backend infrastructure. Base4U gives us go-to-market and platform support, design-partner access, and the validation loop to move from pilot to a defined category — execution infrastructure for AI-native organizations.',
-      },
-      {
         q: 'What are you asking for?',
-        a: 'Three things: 3–5 enterprise design partners, live pilot environments, and go-to-market & platform support. The capital and network of the accelerator convert our validation footprint into repeatable deployment.',
+        a: 'Three things: 3–5 enterprise design partners, live pilot environments, and go-to-market & platform support.',
       },
       {
         q: 'What are the biggest risks?',
@@ -136,9 +132,9 @@ export default function InvestorQA() {
       <Nav />
       <main>
         <PageHero
-          eyebrow="INVESTOR Q&A · BASE4U APPLICATION"
+          eyebrow="INVESTOR Q&A"
           title="The questions investors ask most — and our answers."
-          subtitle="A prepared reference aligned with the deck: the thesis, product, privacy posture, competition, model, and ask, answered the way an investor or accelerator partner would ask them."
+          subtitle="A prepared reference aligned with the deck: the thesis, product, privacy posture, competition, model, and ask, answered the way an investor would ask them."
         />
         <section className="relative border-t border-tab-ghost">
           <div className="mx-auto max-w-[1400px] px-5 sm:px-8 py-16 sm:py-24">

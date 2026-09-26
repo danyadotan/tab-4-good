@@ -39,7 +39,7 @@ const SECTIONS = [
   },
   {
     h: 'The Ask',
-    p: '3–5 enterprise design partners. Live pilot environments. Go-to-market and platform support. Built on Base44, joining the Base4U accelerator to validate execution recovery with real enterprises.',
+    p: '3–5 enterprise design partners. Live pilot environments. Go-to-market and platform support.',
   },
 ];
 

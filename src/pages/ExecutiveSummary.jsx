@@ -75,7 +75,7 @@ export default function ExecutiveSummary() {
       <Nav />
       <main>
         <PageHero
-          eyebrow="EXECUTIVE SUMMARY · BASE4U APPLICATION"
+          eyebrow="EXECUTIVE SUMMARY"
           title="Execution infrastructure for AI-native organizations."
           subtitle="A one-page synthesis of TAB@Work — the thesis, the product, the market, the model, and the ask — aligned with the investor deck."
         />
@@ -212,7 +212,7 @@ export default function ExecutiveSummary() {
           </div>
         </DocSection>
 
-        <DocSection id="ask" eyebrow="09 — THE ASK" title="Build the execution layer with us." intro="We're building TAB on Base44 and joining the Base4U accelerator to validate execution recovery with real enterprises — and looking for the operators and investors who see the same bottleneck.">
+        <DocSection id="ask" eyebrow="09 — THE ASK" title="Build the execution layer with us." intro="We're looking for the operators and investors who see the same bottleneck.">
           <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
             {ASK.map((a) => (
               <span key={a} className="tab-mono text-[0.7rem] text-tab-ink flex items-center gap-2">
