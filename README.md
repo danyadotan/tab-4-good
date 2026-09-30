@@ -1,6 +1,7 @@
 # TAB-4-Good
 
-Independent React/Vite single-page site for TAB@Work. It has no Base44 SDK, backend, auth, build plugin, or runtime API dependency.
+Independent React/Vite single-page site for TAB@Work. 
+It has no Base44 SDK, backend, auth, build plugin, or runtime API dependency.
 
 ## Local development
 
