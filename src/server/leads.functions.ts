@@ -17,12 +17,19 @@ export const saveLead = createServerFn({ method: 'POST' })
     let stored = false;
     let emailed = false;
 
-    if (process.env.BLOB_READ_WRITE_TOKEN) {
+    if (process.env.BLOB_STORE_ID || process.env.BLOB_READ_WRITE_TOKEN) {
       const { put } = await import('@vercel/blob');
       const day = record.receivedAt.slice(0, 10);
-      await put(`contact-requests/${day}/${record.id}.json`, JSON.stringify(record, null, 2), {
-        access: 'private', addRandomSuffix: false, contentType: 'application/json', token: process.env.BLOB_READ_WRITE_TOKEN,
-      });
+      await put(
+        `contact-requests/${day}/${record.id}.json`,
+        JSON.stringify(record, null, 2),
+        {
+          access: 'private',
+          addRandomSuffix: false,
+          contentType: 'application/json',
+          ...(process.env.BLOB_READ_WRITE_TOKEN ? { token: process.env.BLOB_READ_WRITE_TOKEN } : {}),
+        },
+      );
       stored = true;
     }
 

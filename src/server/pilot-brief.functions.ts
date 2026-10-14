@@ -1,5 +1,5 @@
 import { chat } from '@tanstack/ai';
-import { createLovableText } from '@tanstack/ai-lovable';
+import { vercelGatewayText } from '@tanstack/ai-vercel-gateway';
 import { createServerFn } from '@tanstack/react-start';
 import { z } from 'zod';
 
@@ -26,10 +26,8 @@ Produce a concrete four-week pilot brief. Diagnose only these breakdown classes 
 export const generatePilotBrief = createServerFn({ method: 'POST' })
   .validator(PilotInput)
   .handler(async ({ data }) => {
-    const apiKey = process.env.LOVABLE_API_KEY;
-    if (!apiKey) throw new Error('The AI pilot generator is not configured yet. Add LOVABLE_API_KEY to the deployment.');
     const { text } = await chat({
-      adapter: createLovableText('google/gemini-3.7-flash', apiKey),
+      adapter: vercelGatewayText('google/gemini-2.5-flash'),
       systemPrompts: [SYSTEM_PROMPT],
       messages: [
         { role: 'user', content: `Workflow domain: ${data.domain}\nCurrent toolchain: ${data.toolchain}\nTeam scale: ${data.teamScale}\nPrimary stall points: ${data.stallPoints}` },
