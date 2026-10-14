@@ -19,6 +19,7 @@ import Footer from '@/components/tab/Footer';
 import CornerSummary from '@/components/tab/CornerSummary';
 import BottomNav from '@/components/tab/BottomNav';
 import PullToRefresh from '@/components/tab/PullToRefresh';
+import PilotFitStudio from '@/components/tab/PilotFitStudio';
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <main>
         <Hero />
         <WhereWeStand />
+        <PilotFitStudio />
         <Problem />
         <Architecture />
         <Capabilities />

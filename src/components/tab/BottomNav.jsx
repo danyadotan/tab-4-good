@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useRouterState } from '@tanstack/react-router';
 import { Home as HomeIcon, Layers, HelpCircle, BookOpen } from 'lucide-react';
 
 const TABS = [
@@ -9,7 +9,7 @@ const TABS = [
 ];
 
 export default function BottomNav() {
-  const { pathname } = useLocation();
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
   return (
     <nav
       className="md:hidden fixed bottom-0 inset-x-0 z-40 bg-tab-base/95 backdrop-blur-md border-t border-tab-ghost"

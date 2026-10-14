@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import DownloadOverview from './DownloadOverview';
 
 const NAV_LINKS = [
-  { label: 'Thesis', to: '/#thesis' },
-  { label: 'Product', to: '/#product' },
-  { label: 'Founder', to: '/#founder' },
+  { label: 'Thesis', to: '/', hash: 'thesis' },
+  { label: 'Product', to: '/', hash: 'product' },
+  { label: 'Founder', to: '/', hash: 'founder' },
   { label: 'Use Cases', to: '/use-cases' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Glossary', to: '/glossary' },
@@ -31,7 +31,7 @@ export default function Footer() {
             <p className="tab-mono text-[0.6rem] text-tab-base/40 mb-3">NAVIGATE</p>
             <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
               {NAV_LINKS.map((l) => (
-                <Link key={l.to} to={l.to} className="text-tab-base/70 hover:text-tab-accent transition-colors w-fit">{l.label}</Link>
+                <Link key={l.label} to={l.to} hash={l.hash} className="text-tab-base/70 hover:text-tab-accent transition-colors w-fit">{l.label}</Link>
               ))}
             </div>
           </div>
@@ -48,7 +48,8 @@ export default function Footer() {
                 <a href="https://github.com/danyadotan/execution-hygiene-agent" target="_blank" rel="noopener noreferrer" className="text-tab-base/70 hover:text-tab-accent transition-colors">Open source on GitHub</a>
                 <span className="text-xs text-tab-base/50">The open-source hygiene check behind TAB.</span>
               </div>
-              <DownloadOverview className="text-tab-base/70 hover:text-tab-accent" label="Download Overview (PDF)" />
+              <a href="/TAB-Work-Investor-Brief.pdf" download className="text-tab-base/70 hover:text-tab-accent">Download investor brief (PDF)</a>
+              <DownloadOverview className="text-tab-base/70 hover:text-tab-accent" label="Generate extended overview" />
             </div>
           </div>
         </div>

@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import { Menu, X } from 'lucide-react';
 import ContactDialog from './ContactDialog';
+import TabAssistant from './TabAssistant';
 
 const LINKS = [
-  { label: 'Thesis', to: '/#thesis' },
-  { label: 'Product', to: '/#product' },
+  { label: 'Thesis', to: '/', hash: 'thesis' },
+  { label: 'Product', to: '/', hash: 'product' },
   { label: 'Use Cases', to: '/use-cases' },
   { label: 'FAQ', to: '/faq' },
-  { label: 'Founder', to: '/#founder' },
+  { label: 'Founder', to: '/', hash: 'founder' },
 ];
 
 export default function Nav() {
@@ -36,11 +37,12 @@ export default function Nav() {
 
         <div className="hidden md:flex items-center gap-7">
           {LINKS.map((l) => (
-            <Link key={l.to} to={l.to} className="tab-mono text-[0.7rem] text-tab-muted hover:text-tab-ink transition-colors">{l.label}</Link>
+            <Link key={l.label} to={l.to} hash={l.hash} className="tab-mono text-[0.7rem] text-tab-muted hover:text-tab-ink transition-colors">{l.label}</Link>
           ))}
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <TabAssistant />
           <ContactDialog
             defaultType="Design Partner"
             trigger={<button className="tab-mono text-[0.7rem] px-4 py-2 bg-tab-ink text-tab-base hover:bg-tab-accent transition-colors">Explore a Design Partnership</button>}
@@ -56,8 +58,9 @@ export default function Nav() {
         <div className="md:hidden border-t border-tab-ghost bg-tab-base/95 backdrop-blur-md">
           <div className="px-4 py-3 flex flex-col gap-1.5">
             {LINKS.map((l) => (
-              <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="tab-mono text-[0.65rem] text-tab-muted hover:text-tab-ink transition-colors py-0.5">{l.label}</Link>
+              <Link key={l.label} to={l.to} hash={l.hash} onClick={() => setOpen(false)} className="tab-mono text-[0.65rem] text-tab-muted hover:text-tab-ink transition-colors py-0.5">{l.label}</Link>
             ))}
+            <div className="py-1"><TabAssistant /></div>
             <ContactDialog
               defaultType="Design Partner"
               trigger={<button className="tab-mono text-[0.65rem] px-4 py-2 mt-1 bg-tab-ink text-tab-base text-left">Explore a Design Partnership</button>}
