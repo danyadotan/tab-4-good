@@ -40,5 +40,15 @@ export const generatePilotBrief = createServerFn({ method: 'POST' })
       stream: false,
     });
     const cleaned = text.trim().replace(/^\`\`\`(?:json)?\s*/i, '').replace(/\s*\`\`\`$/, '');
-    return PilotBrief.parse(JSON.parse(cleaned));
+    const generated = JSON.parse(cleaned);
+    const normalized = {
+      ...generated,
+      diagnosis: Array.isArray(generated.diagnosis) ? generated.diagnosis.slice(0, 3) : generated.diagnosis,
+      pilot: Array.isArray(generated.pilot)
+        ? generated.pilot.slice(0, 4).map((week: Record<string, unknown>) => ({ ...week, week: String(week.week ?? '') }))
+        : generated.pilot,
+      metrics: Array.isArray(generated.metrics) ? generated.metrics.slice(0, 5) : generated.metrics,
+      assumptions: Array.isArray(generated.assumptions) ? generated.assumptions.slice(0, 5) : generated.assumptions,
+    };
+    return PilotBrief.parse(normalized);
   });
