@@ -46,8 +46,9 @@
     "@radix-ui/react-tooltip": "^1.1.8",
     "@stripe/react-stripe-js": "^3.0.0",
     "@stripe/stripe-js": "^5.2.0",
-    "@tanstack/ai": "^0.69.0",
-    "@tanstack/ai-vercel-gateway": "^0.4.0",
+    "@tanstack/ai": "0.65.0",
+    "@tanstack/ai-vercel-gateway": "0.3.4",
+    "@tanstack/openai-base": "0.12.4",
     "@tanstack/react-query": "^5.84.1",
     "@tanstack/react-router": "^1.170.44",
     "@tanstack/react-start": "^1.169.1",
@@ -107,5 +108,8 @@
     "typescript": "^5.9.3",
     "vite": "^8.0.14",
     "vitest": "^3.2.4"
+  },
+  "overrides": {
+    "@tanstack/openai-base": "0.12.4"
   }
 }

@@ -26,7 +26,7 @@ Produce a concrete four-week pilot brief. Diagnose only these breakdown classes 
 export const generatePilotBrief = createServerFn({ method: 'POST' })
   .validator(PilotInput)
   .handler(async ({ data }) => {
-    const { text } = await chat({
+    const text = await chat({
       adapter: vercelGatewayText('google/gemini-2.5-flash'),
       systemPrompts: [SYSTEM_PROMPT],
       messages: [
