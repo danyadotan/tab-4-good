@@ -1,6 +1,7 @@
 import { chat } from '@tanstack/ai';
-import { vercelGatewayText } from '@tanstack/ai-vercel-gateway';
+import { createVercelGatewayText } from '@tanstack/ai-vercel-gateway';
 import { createServerFn } from '@tanstack/react-start';
+import { getRequestHeader } from '@tanstack/react-start/server';
 import { z } from 'zod';
 
 const PilotInput = z.object({
@@ -26,8 +27,12 @@ Produce a concrete four-week pilot brief. Diagnose only these breakdown classes 
 export const generatePilotBrief = createServerFn({ method: 'POST' })
   .validator(PilotInput)
   .handler(async ({ data }) => {
+    const gatewayCredential = getRequestHeader('x-vercel-oidc-token')
+      ?? process.env.AI_GATEWAY_API_KEY
+      ?? process.env.VERCEL_OIDC_TOKEN;
+    if (!gatewayCredential) throw new Error('The AI pilot generator is temporarily unavailable.');
     const text = await chat({
-      adapter: vercelGatewayText('google/gemini-2.5-flash'),
+      adapter: createVercelGatewayText('google/gemini-2.5-flash', gatewayCredential),
       systemPrompts: [SYSTEM_PROMPT],
       messages: [
         { role: 'user', content: `Workflow domain: ${data.domain}\nCurrent toolchain: ${data.toolchain}\nTeam scale: ${data.teamScale}\nPrimary stall points: ${data.stallPoints}` },
